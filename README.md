@@ -32,7 +32,7 @@ A smart, AI-powered web app that matches your resume to job descriptions using s
 |---------------|--------------|--------------|
 | ![upload](screenshots/upload.png) | ![matches](screenshots/matches.png) | ![letter](screenshots/letter.png) |
 
-> *(You can create a `screenshots/` folder and add images if you like — optional but great for GitHub.)*
+
 
 ---
 
@@ -47,4 +47,5 @@ A smart, AI-powered web app that matches your resume to job descriptions using s
 ---
 
 ## 📂 File Structure
+
 
