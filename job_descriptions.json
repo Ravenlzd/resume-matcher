@@ -1,0 +1,17 @@
+[
+  {
+    "title": "AI Research Intern",
+    "company": "NeuralCore",
+    "description": "Conduct research on NLP models, assist in developing machine learning pipelines, and analyze large datasets using Python and TensorFlow."
+  },
+  {
+    "title": "Junior Data Analyst",
+    "company": "DataMinds",
+    "description": "Work with SQL and Python to clean, analyze, and visualize data. Build reports and support business decisions."
+  },
+  {
+    "title": "Backend Developer (Python)",
+    "company": "TechFlow",
+    "description": "Design and implement scalable backend services using FastAPI and SQLAlchemy. Collaborate with frontend and data teams."
+  }
+]
