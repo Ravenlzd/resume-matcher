@@ -43,19 +43,6 @@ Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
 
 ---
 
-## 📂 File Structure
-JobPulse/
-│── app.py # Main Streamlit app
-│── sources.py # Job fetching (Remotive, Greenhouse)
-│── resume_parser.py # Extract text from resumes
-│── matching.py # Scoring + skill extraction
-│── requirements.txt # Dependencies
-│── README.md # Project documentation
-│── screenshots/ # Example images
-
-
----
-
 ## ▶️ Run Locally
 
 bash
@@ -72,7 +59,7 @@ Then open http://localhost:8501 in your browser 🚀
 
 ---
 
-##🌍 Deployment
+## 🌍 Deployment
 
 You can deploy JobPulse on:
 
@@ -80,7 +67,7 @@ Streamlit Community Cloud (free, easiest)
 
 Railway / Render for broader hosting
 
-##📌 Roadmap
+## 📌 Roadmap
 
  Add support for LinkedIn / Indeed APIs
 
@@ -94,7 +81,7 @@ $$🤝 Contributing
 
 Pull requests are welcome! Open an issue for suggestions or bugs.
 
-##📄 License
+## 📄 License
 
  © 2025 Ravan Alizada
 
@@ -108,6 +95,7 @@ Pull requests are welcome! Open an issue for suggestions or bugs.
 ![Screenshot 4](screenshots/Screenshot%202025-08-16%20192115.png)
 ![Screenshot 5](screenshots/Screenshot%202025-08-16%20192132.png)
 ![Screenshot 6](screenshots/Screenshot%202025-08-16%20192231.png)
+
 
 
 
