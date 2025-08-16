@@ -31,15 +31,6 @@ Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
 
 ---
 
-## 📸 Screenshots
-
-![Screenshot 1](screenshots/Screenshot%202025-08-16%20191851.png)
-![Screenshot 2](screenshots/Screenshot%202025-08-16%20191930.png)
-![Screenshot 3](screenshots/Screenshot%202025-08-16%20192056.png)
-![Screenshot 4](screenshots/Screenshot%202025-08-16%20192115.png)
-![Screenshot 5](screenshots/Screenshot%202025-08-16%20192132.png)
-![Screenshot 6](screenshots/Screenshot%202025-08-16%20192231.png)
-
 
 ## 🛠️ Tech Stack
 
@@ -53,10 +44,70 @@ Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
 ---
 
 ## 📂 File Structure
+JobPulse/
+│── app.py # Main Streamlit app
+│── sources.py # Job fetching (Remotive, Greenhouse)
+│── resume_parser.py # Extract text from resumes
+│── matching.py # Scoring + skill extraction
+│── requirements.txt # Dependencies
+│── README.md # Project documentation
+│── screenshots/ # Example images
 
 
+---
 
+## ▶️ Run Locally
 
+bash
+# Clone repo
+git clone https://github.com/Ravenlzd/jobpulse.git
+cd jobpulse
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start app
+streamlit run app.py
+Then open http://localhost:8501 in your browser 🚀
+
+---
+
+##🌍 Deployment
+
+You can deploy JobPulse on:
+
+Streamlit Community Cloud (free, easiest)
+
+Railway / Render for broader hosting
+
+##📌 Roadmap
+
+ Add support for LinkedIn / Indeed APIs
+
+ Advanced filtering (salary, remote-only, etc.)
+
+ Export matched jobs to PDF/CSV
+
+ Deploy as a standalone web app (beyond Streamlit)
+
+$$🤝 Contributing
+
+Pull requests are welcome! Open an issue for suggestions or bugs.
+
+##📄 License
+
+ © 2025 Ravan Alizada
+
+---
+
+## 📸 Screenshots
+
+![Screenshot 1](screenshots/Screenshot%202025-08-16%20191851.png)
+![Screenshot 2](screenshots/Screenshot%202025-08-16%20191930.png)
+![Screenshot 3](screenshots/Screenshot%202025-08-16%20192056.png)
+![Screenshot 4](screenshots/Screenshot%202025-08-16%20192115.png)
+![Screenshot 5](screenshots/Screenshot%202025-08-16%20192132.png)
+![Screenshot 6](screenshots/Screenshot%202025-08-16%20192231.png)
 
 
 
