@@ -33,9 +33,13 @@ Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
 
 ## 📸 Screenshots
 
-[(screenshots/Screenshot%2025-08-16%191851.png)]    [(screenshots/Screenshot%2025-08-16%191930.png)]   [(screenshots/Screenshot%2025-08-16%192056.png)]
+![Screenshot 1](screenshots/Screenshot%202025-08-16%20191851.png)
+![Screenshot 2](screenshots/Screenshot%202025-08-16%20191930.png)
+![Screenshot 3](screenshots/Screenshot%202025-08-16%20192056.png)
+![Screenshot 4](screenshots/Screenshot%202025-08-16%20192115.png)
+![Screenshot 5](screenshots/Screenshot%202025-08-16%20192132.png)
+![Screenshot 6](screenshots/Screenshot%202025-08-16%20192231.png)
 
-[(screenshots/Screenshot%2025-08-16%192115.png)]    [(screenshots/Screenshot%2025-08-16%192132.png)]   [(screenshots/Screenshot%2025-08-16%192231.png)]
 
 ## 🛠️ Tech Stack
 
@@ -49,6 +53,7 @@ Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
 ---
 
 ## 📂 File Structure
+
 
 
 
