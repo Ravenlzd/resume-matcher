@@ -33,9 +33,9 @@ Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
 
 ## 📸 Screenshots
 
-(screenshots/Screenshot 2025-08-16 191851.png)    (screenshots/Screenshot 2025-08-16 191930.png)   (screenshots/Screenshot 2025-08-16 192056.png)
+[(screenshots/Screenshot 2025-08-16 191851.png)    (screenshots/Screenshot 2025-08-16 191930.png)   (screenshots/Screenshot 2025-08-16 192056.png)]
 
-(screenshots/Screenshot 2025-08-16 192115.png)    (screenshots/Screenshot 2025-08-16 192132.png)   (screenshots/Screenshot 2025-08-16 192231.png)
+[(screenshots/Screenshot 2025-08-16 192115.png)    (screenshots/Screenshot 2025-08-16 192132.png)   (screenshots/Screenshot 2025-08-16 192231.png)]
 
 ## 🛠️ Tech Stack
 
@@ -49,5 +49,6 @@ Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
 ---
 
 ## 📂 File Structure
+
 
 
