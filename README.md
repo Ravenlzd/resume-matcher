@@ -1,49 +1,62 @@
-# 🚀 JobPulse — AI-Powered Job Matcher
+# JobPulse - Resume Matcher
 
-JobPulse is an AI-powered job search platform that fetches live job postings from multiple sources and ranks them against your resume using semantic similarity and skill-based analysis.
+JobPulse is a Streamlit app that fetches live jobs, compares them with your resume, and explains why each role matches (or does not).
 
-👉 **Live Demo:** https://resumematcher3.streamlit.app
+## Features
 
----
+- Live job aggregation from:
+  - Remotive API
+  - Greenhouse boards (with job-detail fallback for missing descriptions)
+- Resume upload and parsing from PDF
+  - Primary extractor: `pdfplumber`
+  - Fallback extractor: `pdfminer.six`
+- Hybrid ranking
+  - Semantic similarity (Sentence-Transformers)
+  - Weighted skill coverage (required vs nice-to-have)
+- Explainable matching per job
+  - Matched skills
+  - Missing required skills
+  - Missing optional skills
+  - Supporting text snippets
+- Advanced filtering
+  - Keyword search
+  - Remote-only
+  - Saved-only
+  - Source filter
+  - Role-category filter
+  - Posted-date window
+  - Minimum match score
+- Save/unsave jobs with local persistence in `.saved_jobs.json`
+- Reliability improvements
+  - HTTP retries/backoff for source APIs
+  - Graceful partial-failure handling in UI
+  - Short-term caching of job fetches
 
-## ✨ Key Features
+## How Ranking Works
 
-- 🔎 Fetch real-time jobs from Remotive & Greenhouse APIs  
-- 📄 Upload PDF resume and extract text automatically  
-- 🤖 Rank jobs using transformer-based semantic similarity  
-- 🧠 Highlight matched skills between resume and job descriptions  
-- ⭐ Save favorite jobs for later  
-- 🔗 Apply directly via job links  
-- 🎯 Search and filter by keyword, company, or location  
+Job score is a hybrid:
 
----
+- `75%` semantic similarity between resume text and job text
+- `25%` weighted skill coverage
 
-## 🧠 How It Works
+Skill coverage gives higher weight to skills found near requirement-style language (`required`, `must have`, etc.) and lower weight to nice-to-have language (`preferred`, `bonus`, etc.).
 
-1. Fetches live job postings from multiple APIs (Remotive + Greenhouse)  
-2. Parses uploaded PDF resume into structured text  
-3. Uses Sentence-Transformers (`all-MiniLM-L6-v2`) to compute semantic similarity  
-4. Combines similarity with skill overlap scoring  
-5. Ranks and displays the most relevant job opportunities  
+## Tech Stack
 
----
+- App/UI: Streamlit
+- Language: Python
+- NLP: `sentence-transformers` (`all-MiniLM-L6-v2`)
+- Similarity: `scikit-learn` cosine similarity
+- Parsing: `pdfplumber`, `pdfminer.six`, `beautifulsoup4`
+- HTTP: `requests` + retry adapter
+- Testing: `pytest`
+- CI: GitHub Actions
 
-## 🛠️ Tech Stack
-
-- **Frontend/App**: Streamlit  
-- **Backend**: Python  
-- **NLP Model**: Sentence-Transformers  
-- **Scoring**: Cosine similarity (scikit-learn)  
-- **Parsing**: pdfplumber + BeautifulSoup  
-- **Data Sources**: Remotive API + Greenhouse job boards  
-
----
-
-## ▶️ Run Locally
+## Local Setup
 
 ```bash
-git clone https://github.com/Ravenlzd/jobpulse.git
-cd jobpulse
+git clone https://github.com/Ravenlzd/resume-matcher.git
+cd resume-matcher
 
 python3 -m venv venv
 source venv/bin/activate
@@ -52,34 +65,34 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Then open http://localhost:8501 in your browser 🚀
+Open `http://localhost:8501`.
 
----
+## Running Tests
 
-## 🌍 Deployment
+```bash
+source venv/bin/activate
+pytest -q
+```
 
-This project is deployed using **Streamlit Community Cloud**.
+## Continuous Integration
 
----
+This repo includes a GitHub Actions workflow:
 
-## 📸 Screenshots
+- `.github/workflows/tests.yml`
 
-![App Screenshot](screenshots/Screenshot%202025-08-16%20191851.png)  
-![App Screenshot](screenshots/Screenshot%202025-08-16%20191930.png)  
-![App Screenshot](screenshots/Screenshot%202025-08-16%20192056.png)
+It runs tests on push and pull requests across Python `3.9` and `3.11`.
 
----
+## Notes
 
-## 🚀 Future Improvements
+- On older macOS Python builds you may see:
+  - `urllib3 NotOpenSSLWarning` (LibreSSL vs OpenSSL)
+- The app still works, but using a newer Python build (3.11+) is recommended for best compatibility.
 
-- Add missing skills analysis (show gaps between resume and job requirements)  
-- Advanced filters (salary, remote-only, experience level)  
-- Export matched jobs to PDF/CSV  
-- Migrate to FastAPI backend + React frontend  
-- Add more job sources (LinkedIn, Indeed, etc.)  
+## Project Structure (Core Files)
 
----
+- `app.py`: Streamlit UI, filters, state, persistence
+- `matching.py`: skill extraction, explainability, hybrid ranking
+- `sources.py`: Remotive/Greenhouse fetchers + retry/backoff
+- `resume_parser.py`: PDF text extraction with fallback
+- `tests/`: unit tests for matching and sources
 
-## 📄 License
-
-© 2025 Ravan Alizada
