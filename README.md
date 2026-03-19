@@ -1,101 +1,85 @@
-# 🌐 JobPulse — Live Job Finder
+# 🚀 JobPulse — AI-Powered Job Matcher
 
-A real-time job search and resume matcher that fetches live job postings from multiple sources (Remotive + Greenhouse boards), lets you search/filter them, and ranks jobs against your resume using semantic similarity.  
+JobPulse is an AI-powered job search platform that fetches live job postings from multiple sources and ranks them against your resume using semantic similarity and skill-based analysis.
 
-Built with **Streamlit**, **Sentence-Transformers**, and **BeautifulSoup**.
+👉 **Live Demo:** https://resumematcher3.streamlit.app
 
 ---
 
-## 🚀 Features
+## ✨ Key Features
 
-✅ Fetch live jobs automatically on page load  
-✅ Search and filter jobs by keywords, company, or location  
-✅ Upload your resume (PDF) and preview the extracted text  
-✅ Rank jobs by match score (semantic similarity with transformers)  
-✅ Highlight matched skills between your resume and job descriptions  
-✅ Save favorite jobs for later  
-✅ Apply directly via job links  
-✅ Clean, interactive UI  
+- 🔎 Fetch real-time jobs from Remotive & Greenhouse APIs  
+- 📄 Upload PDF resume and extract text automatically  
+- 🤖 Rank jobs using transformer-based semantic similarity  
+- 🧠 Highlight matched skills between resume and job descriptions  
+- ⭐ Save favorite jobs for later  
+- 🔗 Apply directly via job links  
+- 🎯 Search and filter by keyword, company, or location  
 
 ---
 
 ## 🧠 How It Works
 
-1. On load, JobPulse fetches the latest jobs from:
-   - [Remotive.io](https://remotive.io)
-   - Greenhouse boards (you can add company tokens like `stripe`, `airbnb`, `openai`)
-2. Upload your resume (PDF) — text is extracted and stored.
-3. Jobs are scored against your resume using a transformer model (`all-MiniLM-L6-v2`).
-4. You can search/filter, rank by relevance, and save jobs you like.
-5. Apply directly from the app.
+1. Fetches live job postings from multiple APIs (Remotive + Greenhouse)  
+2. Parses uploaded PDF resume into structured text  
+3. Uses Sentence-Transformers (`all-MiniLM-L6-v2`) to compute semantic similarity  
+4. Combines similarity with skill overlap scoring  
+5. Ranks and displays the most relevant job opportunities  
 
 ---
 
-
 ## 🛠️ Tech Stack
 
-- **Frontend & App**: [Streamlit](https://streamlit.io/)  
-- **Job Sources**: Remotive API + Greenhouse job boards  
-- **NLP & Matching**: [Sentence-Transformers](https://www.sbert.net/)  
-- **Scoring**: Cosine similarity (`scikit-learn`)  
-- **PDF Parsing**: `pdfplumber`  
-- **HTML Parsing**: `BeautifulSoup`  
+- **Frontend/App**: Streamlit  
+- **Backend**: Python  
+- **NLP Model**: Sentence-Transformers  
+- **Scoring**: Cosine similarity (scikit-learn)  
+- **Parsing**: pdfplumber + BeautifulSoup  
+- **Data Sources**: Remotive API + Greenhouse job boards  
 
 ---
 
 ## ▶️ Run Locally
 
-bash
-# Clone repo
+```bash
 git clone https://github.com/Ravenlzd/jobpulse.git
 cd jobpulse
 
-# Install dependencies
-pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
 
-# Start app
+pip install -r requirements.txt
 streamlit run app.py
+```
+
 Then open http://localhost:8501 in your browser 🚀
 
 ---
 
 ## 🌍 Deployment
 
-You can deploy JobPulse on:
-
-Streamlit Community Cloud (free, easiest)
-
-Railway / Render for broader hosting
-
-## 📌 Roadmap
-
- Add support for LinkedIn / Indeed APIs
-
- Advanced filtering (salary, remote-only, etc.)
-
- Export matched jobs to PDF/CSV
-
- Deploy as a standalone web app (beyond Streamlit)
-
-$$🤝 Contributing
-
-Pull requests are welcome! Open an issue for suggestions or bugs.
-
-## 📄 License
-
- © 2025 Ravan Alizada
+This project is deployed using **Streamlit Community Cloud**.
 
 ---
 
 ## 📸 Screenshots
 
-![Screenshot 1](screenshots/Screenshot%202025-08-16%20191851.png)
-![Screenshot 2](screenshots/Screenshot%202025-08-16%20191930.png)
-![Screenshot 3](screenshots/Screenshot%202025-08-16%20192056.png)
-![Screenshot 4](screenshots/Screenshot%202025-08-16%20192115.png)
-![Screenshot 5](screenshots/Screenshot%202025-08-16%20192132.png)
-![Screenshot 6](screenshots/Screenshot%202025-08-16%20192231.png)
+![App Screenshot](screenshots/Screenshot%202025-08-16%20191851.png)  
+![App Screenshot](screenshots/Screenshot%202025-08-16%20191930.png)  
+![App Screenshot](screenshots/Screenshot%202025-08-16%20192056.png)
 
+---
 
+## 🚀 Future Improvements
 
+- Add missing skills analysis (show gaps between resume and job requirements)  
+- Advanced filters (salary, remote-only, experience level)  
+- Export matched jobs to PDF/CSV  
+- Migrate to FastAPI backend + React frontend  
+- Add more job sources (LinkedIn, Indeed, etc.)  
 
+---
+
+## 📄 License
+
+© 2025 Ravan Alizada
