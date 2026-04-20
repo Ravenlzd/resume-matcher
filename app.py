@@ -381,13 +381,13 @@ def sort_jobs(jobs: List[Dict]) -> List[Dict]:
     if sort_by == "Newest first":
         return sorted(
             jobs,
-            key=lambda j: parse_posted_at(j.get("posted_at")) or datetime.min.replace(tzinfo=timezone.utc),
+            key=lambda j: parse_posted_at(j.get("posted_at") or "") or datetime.min.replace(tzinfo=timezone.utc),
             reverse=True,
         )
     if sort_by == "Oldest first":
         return sorted(
             jobs,
-            key=lambda j: parse_posted_at(j.get("posted_at")) or datetime.max.replace(tzinfo=timezone.utc),
+            key=lambda j: parse_posted_at(j.get("posted_at") or "") or datetime.max.replace(tzinfo=timezone.utc),
         )
     if sort_by == "Company A-Z":
         return sorted(jobs, key=lambda j: (j.get("company", "") or "").lower())
@@ -519,7 +519,7 @@ def initial_fetch_if_needed():
         st.session_state.jobs = merge_dedupe([rem, boards])
 
         for job in st.session_state.jobs:
-            job["clean_description"] = html_to_text(job.get("description"))
+            job["clean_description"] = html_to_text(job.get("description") or "")
             job["role_category"] = infer_role_category(job)
             job.pop("score", None)
 

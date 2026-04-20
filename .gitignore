@@ -1,0 +1,6 @@
+.DS_Store
+.pytest_cache/
+.saved_jobs.json
+__pycache__/
+*.pyc
+venv/
