@@ -4,7 +4,7 @@ Find better jobs faster with live job feeds, resume-aware ranking, and clean mat
 
 ## 🌐 Live Demo
 
-👉 https://resume-matcher-uvrrrmieyeunynrew4vbgi.streamlit.app
+https://job-pulse.streamlit.app
 
 ## ✨ What This App Does
 
